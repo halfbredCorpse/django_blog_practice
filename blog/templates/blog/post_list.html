@@ -9,16 +9,12 @@
         <h1><a href="/">blog blyat</a></h1>
     </div>
 
-    <div id="post1">
-        <p>published: [date]</p>
-        <h2><a href="">first cyka</a></h2>
-        <p>somebody once told the world was gonna roll me i ain't the sharpest tool in the shed</p>
-    </div>
-
-    <div id="post2">
-        <p>published: [date]</p>
-        <h2><a href="">second cyka</a></h2>
-        <p>she was looking kinda dumb with her finger and her thumb with the shape of an L on her forehead</p>
-    </div>
+    {% for post in posts %}
+        <div id="post_n">
+            <p>published: {{ post.published_date }}</p>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
 </body>
 </html>
